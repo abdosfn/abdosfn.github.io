@@ -1,129 +1,536 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Abdelhamid Soufiani | Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdelhamid Soufiani | Spécialiste Systèmes et Réseaux</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
+    :root {
+      --primary: #2563eb;
+      --primary-dark: #1d4ed8;
+      --dark: #1e293b;
+      --light: #f8fafc;
+      --gray: #94a3b8;
+      --card-bg: #ffffff;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      --shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    }
+    
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
       font-family: 'Inter', sans-serif;
-      background: #f8fafc;
-      color: #1e293b;
+      line-height: 1.6;
+      color: var(--dark);
+      background-color: var(--light);
+      -webkit-font-smoothing: antialiased;
     }
-    header, footer {
-      background: #2563eb;
+    
+    /* En-tête moderne */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--primary-dark));
       color: white;
+      padding: 3rem 1rem;
       text-align: center;
-      padding: 2rem 1rem;
+      position: relative;
+      overflow: hidden;
     }
+    
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 200px;
+      height: 200px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+    }
+    
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    
+    .header-subtitle {
+      font-size: 1.25rem;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+    }
+    
+    .header-contacts {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .header-contact {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 1rem;
+    }
+    
+    /* Contenu principal */
     .container {
-      max-width: 960px;
+      max-width: 1000px;
       margin: 0 auto;
       padding: 2rem 1rem;
     }
-    h2 {
-      color: #2563eb;
-      margin-top: 2rem;
-      border-bottom: 2px solid #2563eb;
-      padding-bottom: 0.5rem;
+    
+    section {
+      margin-bottom: 3rem;
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: var(--shadow);
     }
-    .section {
+    
+    .section-title {
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 1.5rem;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--primary);
+      border-radius: 3px;
+    }
+    
+    /* Cartes d'expérience */
+    .experience {
       margin-bottom: 2rem;
     }
-    ul {
-      padding-left: 1.5rem;
+    
+    .experience-header {
+      margin-bottom: 1rem;
     }
-    .certification-embed {
+    
+    .experience-title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+    
+    .experience-subtitle {
+      font-size: 0.9rem;
+      color: var(--gray);
       display: flex;
-      flex-wrap: wrap;
-      gap: 2rem;
+      align-items: center;
+      gap: 0.5rem;
     }
-    .certification-embed div {
+    
+    .experience-list {
+      list-style: none;
+    }
+    
+    .experience-list li {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    
+    .experience-list li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: bold;
+      flex-shrink: 0;
+    }
+    
+    /* Compétences */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .skill-category {
+      background: var(--card-bg);
+      border-radius: 8px;
+      padding: 1.5rem;
+    }
+    
+    .skill-category h3 {
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+    
+    .skill-list {
+      list-style: none;
+    }
+    
+    .skill-list li {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    
+    .skill-list li::before {
+      content: '•';
+      color: var(--primary);
+      font-weight: bold;
+    }
+    
+    /* Certifications */
+    .certifications-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.5rem;
+    }
+    
+    .certification-card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: var(--shadow);
+      transition: all 0.3s ease;
       text-align: center;
+    }
+    
+    .certification-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-hover);
+    }
+    
+    .certification-title {
+      font-weight: 600;
+      color: var(--dark);
+      font-size: 1rem;
+    }
+    
+    /* Contact */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    
+    .contact-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .contact-icon {
+      width: 50px;
+      height: 50px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    
+    .contact-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+    
+    .contact-info a {
+      color: var(--primary);
+      text-decoration: none;
+      transition: opacity 0.3s;
+    }
+    
+    .contact-info a:hover {
+      opacity: 0.8;
+    }
+    
+    /* Pied de page */
+    footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 2rem;
+      margin-top: 3rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      
+      .header-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .header-contacts {
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+      
+      .skills-grid,
+      .certifications-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      section {
+        padding: 1.5rem;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      header {
+        padding: 2rem 1rem;
+      }
+      
+      header h1 {
+        font-size: 1.8rem;
+      }
+      
+      .section-title {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Abdelhamid Soufiani</h1>
-    <p>IT Operations Support | Network & System Specialist</p>
-    <p>Tanger, Morocco | 23 years old</p>
+    <div class="container">
+      <h1>Abdelhamid Soufiani</h1>
+      <p class="header-subtitle">Technicien spécialisé en Systèmes et Réseaux</p>
+      <div class="header-contacts">
+        <div class="header-contact">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Tanger, Maroc
+        </div>
+        <div class="header-contact">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+          </svg>
+          +212 646 691509
+        </div>
+        <div class="header-contact">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          soufianiabdelhamide20@gmail.com
+        </div>
+      </div>
+    </div>
   </header>
 
   <div class="container">
-    <section class="section">
-      <h2>About Me</h2>
-      <p>IT specialist with 2+ years of experience in infrastructure and networking. Skilled in systems, support, and cybersecurity. Committed to continuous learning and tech solutions.</p>
+    <section>
+      <h2 class="section-title">Résumé Professionnel</h2>
+      <p>Professionnel de l'informatique passionné et autonome avec 2 ans d'expérience dans l'infrastructure et le réseau. Compétent en administration de systèmes et de réseaux, assistance technique et gestion de données. Excellente capacité d'adaptation et fort esprit d'équipe. Engagé dans la réalisation de projets innovants.</p>
     </section>
 
-    <section class="section">
-      <h2>Experience</h2>
-      <ul>
-        <li><strong>IT Operations Support Intern</strong> – TE Connectivity (2024–present)</li>
-        <li><strong>IT Technician</strong> – Megadat (2021–2022)</li>
-      </ul>
+    <section>
+      <h2 class="section-title">Expérience Professionnelle</h2>
+      
+      <div class="experience">
+        <div class="experience-header">
+          <h3 class="experience-title">Support des Opérations IT – TE Connectivity, Tanger</h3>
+          <p class="experience-subtitle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            Sep 2024 – Présent
+          </p>
+        </div>
+        <ul class="experience-list">
+          <li>Assistance technique à plus de 50 utilisateurs</li>
+          <li>Gestion et mise à jour de l'infrastructure réseau</li>
+          <li>Pratiques efficaces de gestion des données</li>
+          <li>Gestion des logiciels et comptes utilisateurs</li>
+        </ul>
+      </div>
+      
+      <div class="experience">
+        <div class="experience-header">
+          <h3 class="experience-title">Technicien IT – Megadat, Tanger</h3>
+          <p class="experience-subtitle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+              <line x1="16" y1="2" x2="16" y2="6"></line>
+              <line x1="8" y1="2" x2="8" y2="6"></line>
+              <line x1="3" y1="10" x2="21" y2="10"></line>
+            </svg>
+            2021 – 2022
+          </p>
+        </div>
+        <ul class="experience-list">
+          <li>Déploiement de plus de 50 postes de travail</li>
+          <li>Installation de systèmes de vidéosurveillance</li>
+          <li>Résolution de pannes techniques</li>
+          <li>Organisation des armoires réseau</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="section">
-      <h2>Education</h2>
-      <ul>
-        <li><strong>Digital Infrastructure Specialist – ISMONTIC</strong> (2022–2024)</li>
-        <li><strong>Baccalaureate – Lycée Ibn Al Khatib</strong> (2020–2021)</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li>Windows, Linux, DNS, DHCP, VPNs</li>
-        <li>PowerShell, Cmd, Batch, RoboCopy</li>
-        <li>VMware, Hyper-V, Firewalls</li>
-      </ul>
-    </section>
-
-    <section class="section">
-      <h2>Certifications</h2>
-      <div class="certification-embed">
-        <div>
-          <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="bc3d825f-cf35-478d-9eb4-9b53067b30e9" data-share-badge-host="https://www.credly.com"></div>
-          <p><strong>Operating Systems Basics</strong><br><em>Issued by Cisco</em></p>
+    <section>
+      <h2 class="section-title">Formation</h2>
+      <div class="experience">
+        <div class="experience-header">
+          <h3 class="experience-title">Diplôme de Technicien Spécialisé en Infrastructure Digitale</h3>
+          <p class="experience-subtitle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            ISMONTIC, Tanger | 2022 - 2024
+          </p>
         </div>
-        <div>
-          <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="4259a9fa-a1dd-4834-804f-1f47c8202d69" data-share-badge-host="https://www.credly.com"></div>
-          <p><strong>Computer Hardware Basics</strong><br><em>Issued by Cisco</em></p>
-        </div>
-        <div>
-          <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="c6952c41-ecad-4e85-913f-ac031c1a5ec3" data-share-badge-host="https://www.credly.com"></div>
-          <p><strong>Networking Basics</strong><br><em>Issued by Cisco</em></p>
-        </div>
-        <div>
-          <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="e2483c5a-4a76-418c-b426-7e953a29c364" data-share-badge-host="https://www.credly.com"></div>
-          <p><strong>Fortinet Certified Associate Cybersecurity</strong><br><em>Issued by Fortinet</em></p>
-        </div>
-        <div>
-          <div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="8a81e9dd-c6e6-498a-a706-b9445921752c" data-share-badge-host="https://www.credly.com"></div>
-          <p><strong>Fortinet FortiGate 7.4 Operator</strong><br><em>Issued by Fortinet</em></p>
+      </div>
+      
+      <div class="experience">
+        <div class="experience-header">
+          <h3 class="experience-title">Baccalauréat en Sciences Physiques et Chimiques</h3>
+          <p class="experience-subtitle">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+            </svg>
+            Lycée Ibn Al Khatib, Tanger | 2020 - 2021
+          </p>
         </div>
       </div>
     </section>
 
-    <section class="section">
-      <h2>Contact</h2>
-      <ul>
-        <li>Email: <a href="mailto:soufianiaodelhamide20@gmail.com">soufianiaodelhamide20@gmail.com</a></li>
-        <li>Phone: <a href="tel:+212646691509">+212 646 691509</a></li>
-        <li>LinkedIn: <a href="https://www.linkedin.com/in/abdelhamid-soufiani" target="_blank">linkedin.com/in/abdelhamid-soufiani</a></li>
+    <section>
+      <h2 class="section-title">Compétences Techniques</h2>
+      <div class="skills-grid">
+        <div class="skill-category">
+          <h3>Systèmes & Réseaux</h3>
+          <ul class="skill-list">
+            <li>Systèmes d'exploitation : Windows, Linux</li>
+            <li>Services réseau : DNS, DHCP, FTP, SSH, HTTP</li>
+            <li>Réseaux : TCP/IP, VLAN, VPN, routage, commutation</li>
+            <li>Administration serveur : configuration, maintenance</li>
+          </ul>
+        </div>
+        
+        <div class="skill-category">
+          <h3>Outils & Technologies</h3>
+          <ul class="skill-list">
+            <li>Virtualisation : VMware, Hyper-V</li>
+            <li>Sécurité : pare-feu, antivirus, cybersécurité</li>
+            <li>Automatisation : PowerShell, CMD, Python, Batch</li>
+            <li>Bureautique : Word, Excel, PowerPoint</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Certifications</h2>
+      <div class="certifications-grid">
+        <div class="certification-card">
+          <p class="certification-title">Computer Hardware Basics (Cisco)</p>
+        </div>
+        <div class="certification-card">
+          <p class="certification-title">Networking Basics (Cisco)</p>
+        </div>
+        <div class="certification-card">
+          <p class="certification-title">Operating Systems Basics (Cisco)</p>
+        </div>
+        <div class="certification-card">
+          <p class="certification-title">Fortinet Certified Associate in Cybersecurity</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">Langues</h2>
+      <ul class="skill-list">
+        <li>Arabe : Langue maternelle 🇲🇦</li>
+        <li>Français : Courant 🇫🇷</li>
+        <li>Anglais : Intermédiaire 🇺🇸</li>
       </ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">Centres d'intérêt</h2>
+      <ul class="skill-list">
+        <li>Technologie et Innovation</li>
+        <li>Gaming & eSport</li>
+        <li>Design</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <h3>Email</h3>
+            <a href="mailto:soufianiabdelhamide20@gmail.com">soufianiabdelhamide20@gmail.com</a>
+          </div>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <h3>Téléphone</h3>
+            <a href="tel:+212646691509">+212 646 691509</a>
+          </div>
+        </div>
+        
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </div>
+          <div class="contact-info">
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/abdelhamid-soufiani" target="_blank" rel="noopener noreferrer">linkedin.com/in/abdelhamid-soufiani</a>
+          </div>
+        </div>
+      </div>
     </section>
   </div>
 
   <footer>
-    &copy; 2025 Abdelhamid Soufiani. All rights reserved.
+    <p>&copy; 2025 Abdelhamid Soufiani. Tous droits réservés.</p>
   </footer>
-
-  <!-- Embed JS -->
-  <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 </body>
 </html>
