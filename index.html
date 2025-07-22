@@ -11,29 +11,43 @@
         padding: 0; 
         background: #f9f9f9; 
         color: #333;
-        font-size: 18px; /* Base font size increased */
-        line-height: 1.6; /* Better readability */
+        font-size: 18px;
+        line-height: 1.6;
     }
     header { 
         background: #004080; 
         color: white; 
-        padding: 2rem 1rem; 
-        text-align: center; 
+        padding: 1rem; 
         position: relative;
     }
     .profile-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 0.5rem;
+        padding: 2rem 0;
+        max-width: 900px;
+        margin: 0 auto;
     }
     .profile-photo {
-        width: 150px;
-        height: 150px;
+        width: 200px;
+        height: 200px;
         border-radius: 50%;
         object-fit: cover;
-        border: 4px solid white;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        border: 5px solid white;
+        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        margin-bottom: 1.5rem;
+    }
+    .header-text {
+        text-align: center;
+    }
+    .title {
+        font-size: 1.3rem;
+        margin: 0.5rem 0;
+    }
+    .location {
+        font-size: 1.1rem;
+        margin: 0;
     }
     section { 
         padding: 2rem 1rem; 
@@ -105,16 +119,16 @@
         font-size: 1.1rem;
         line-height: 1.6;
     }
-</style>
+  </style>
 </head>
 <body>
   <header>
     <div class="profile-container">
       <img src="profile.jpg" alt="Abdelhamid Soufiani" class="profile-photo">
-      <div>
+      <div class="header-text">
         <h1>Abdelhamid Soufiani</h1>
-        <p>IT Operations Support | Network & System Specialist</p>
-        <p>Tanger, Maroc | 23 ans</p>
+        <p class="title">IT Operations Support | Network & System Specialist</p>
+        <p class="location">Tanger, Maroc | 23 ans</p>
       </div>
     </div>
   </header>
@@ -206,7 +220,6 @@
     <ul>
       <li>Automated NAS backup system using RoboCopy & Task Scheduler</li>
       <li>Designed and implemented network segmentation using VLANs to enhance security at TE Connectivity</li>
-      <li>Developed PowerShell scripts to automate routine system maintenance tasks, saving 5+ hours weekly</li>
       <li>Configured LANs and Wi-Fi printers in real-world environments (ReyTech, Megadat)</li>
       <li>Domain and GPO management during internship at TE Connectivity</li>
     </ul>
