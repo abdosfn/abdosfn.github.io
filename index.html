@@ -1,325 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Basic Meta Tags -->
-  <meta charset="UTF-8"> <!-- Character encoding -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport -->
-  <title>Abdelhamid Soufiani - IT Support Portfolio</title> <!-- Page title -->
-  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abdelhamid Soufiani - IT Support Portfolio</title>
   <style>
-    /* ===== GLOBAL STYLES ===== */
-    body { 
-        font-family: Arial, sans-serif; /* Clean, professional font */
-        margin: 0; /* Remove default margin */
-        padding: 0; /* Remove default padding */
-        background: #f9f9f9; /* Light gray background */
-        color: #333; /* Dark gray text for readability */
-        font-size: 18px; /* Base font size */
-        line-height: 1.5; /* Balanced line spacing */
+    /* Add this to your existing CSS */
+    .certifications-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+      gap: 25px;
+      margin: 2rem 0;
     }
-
-    /* ===== HEADER STYLES ===== */
-    header { 
-        background: #004080; /* Dark blue header background */
-        color: white; /* White text for contrast */
-        padding: 1rem; /* Compact padding */
-        position: relative;
+    .certification-item {
+      text-align: center;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
     }
-    
-    /* Profile container for photo and text */
-    .profile-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 0.5rem; /* Small gap between elements */
-        padding: 1.5rem 0; /* Vertical padding only */
-        max-width: 900px; /* Max content width */
-        margin: 0 auto; /* Center aligned */
+    .certification-item:hover {
+      transform: translateY(-5px);
     }
-    
-    /* Photo container with portrait dimensions */
-    .profile-photo-container {
-        width: 240px; /* Fixed width */
-        height: 320px; /* 3:4 aspect ratio for portrait */
-        margin: 0 auto 1rem; /* Centered with bottom margin */
-        position: relative;
-        overflow: hidden; /* Hide overflow for border-radius */
-        border-radius: 8px; /* Soft rounded corners */
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
-        border: 5px solid white; /* White border */
+    .badge-embed {
+      min-height: 270px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
-    
-    /* Profile photo styling */
-    .profile-photo {
-        width: 100%; /* Fill container */
-        height: 100%; /* Fill container */
-        object-fit: cover; /* Crop to fill container */
-        object-position: center top; /* Focus on face */
-        display: block; /* Remove inline spacing */
+    .certification-title {
+      font-weight: bold;
+      margin-top: 10px;
+      color: #004080;
+      font-size: 0.95rem;
     }
-    
-    /* Header text alignment */
-    .header-text {
-        text-align: center;
-    }
-    
-    /* Job title styling */
-    .title {
-        font-size: 1.3rem; /* Slightly larger than body */
-        margin: 0.3rem 0; /* Tight vertical margin */
-    }
-    
-    /* Location text styling */
-    .location {
-        font-size: 1.1rem; /* Slightly larger than body */
-        margin: 0; /* No margin */
-    }
-
-    /* ===== CONTENT SECTION STYLES ===== */
-    section { 
-        padding: 1.5rem 1rem; /* Compact padding */
-        max-width: 900px; /* Max content width */
-        margin: auto; /* Center aligned */
-    }
-    
-    /* Heading hierarchy */
-    h1 { 
-        font-size: 2.2rem; /* Largest heading */
-        margin-bottom: 0.3rem; /* Tight spacing */
-    }
-    h2 { 
-        font-size: 1.8rem; /* Section headings */
-        margin-bottom: 0.3rem; /* Tight spacing */
-    }
-    h3 {
-        font-size: 1.3rem; /* Sub-section headings */
-        margin-bottom: 0.3rem; /* Tight spacing */
-    }
-    
-    /* Section title with underline */
-    .section-title { 
-        color: #004080; /* Blue to match header */
-        border-bottom: 2px solid #004080; /* Underline effect */
-        padding-bottom: 3px; /* Space between text and line */
-        margin-bottom: 0.8rem; /* Space after title */
-        font-size: 1.6rem; /* Slightly smaller than h2 */
-    }
-    
-    /* List styling */
-    ul { 
-        padding-left: 1.2rem; /* Indent bullets */
-        font-size: 1.1rem; /* Slightly larger than body */
-        margin-top: 0.5rem; /* Space above list */
-    }
-    li {
-        margin-bottom: 0.3rem; /* Space between items */
-    }
-
-    /* ===== EXPERIENCE SECTION STYLES ===== */
-    .experience-item { 
-        margin-bottom: 1.2rem; /* Space between jobs */
-    }
-    .experience-title { 
-        font-weight: bold; /* Bold job titles */
-        margin-bottom: 0.3rem; /* Tight spacing */
-        font-size: 1.2rem; /* Slightly larger */
-    }
-    .experience-date { 
-        color: #666; /* Gray for dates */
-        font-style: italic; /* Italic dates */
-        margin-bottom: 0.3rem; /* Tight spacing */
-        font-size: 1rem; /* Normal size */
-    }
-
-    /* ===== SKILLS SECTION STYLES ===== */
-    .skills-list { 
-        display: flex; /* Side-by-side columns */
-        flex-wrap: wrap; /* Wrap on small screens */
-        gap: 1rem; /* Space between columns */
-    }
-    .skill-category { 
-        flex: 1; /* Equal width columns */
-        min-width: 250px; /* Minimum column width */
-    }
-
-    /* ===== FOOTER STYLES ===== */
-    footer { 
-        text-align: center; /* Centered text */
-        padding: 1rem; /* Compact padding */
-        background: #eee; /* Light gray background */
-        font-size: 1rem; /* Normal size */
-    }
-
-    /* ===== LINK STYLES ===== */
-    a { 
-        color: #004080; /* Blue to match theme */
-        text-decoration: none; /* No underline */
-    }
-    a:hover { 
-        text-decoration: underline; /* Underline on hover */
-    }
-
-    /* ===== PARAGRAPH STYLES ===== */
-    p {
-        font-size: 1.1rem; /* Slightly larger than body */
-        line-height: 1.4; /* Tight line spacing */
-        margin: 0.5rem 0; /* Vertical spacing */
-    }
-
-    /* ===== MOBILE RESPONSIVE STYLES ===== */
-    @media (max-width: 600px) {
-        /* Smaller photo on mobile */
-        .profile-photo-container {
-            width: 180px;
-            height: 240px;
-        }
-        /* Smaller headings on mobile */
-        h1 {
-            font-size: 1.8rem;
-        }
-        .section-title {
-            font-size: 1.4rem;
-        }
-    }
+    /* Keep all your existing CSS */
   </style>
 </head>
 <body>
-  <!-- ===== HEADER WITH PROFILE ===== -->
-  <header>
-    <div class="profile-container">
-      <!-- Profile Photo Container -->
-      <div class="profile-photo-container">
-        <img src="profile.jpg" alt="Abdelhamid Soufiani" class="profile-photo">
+  <!-- [Your existing header and other sections] -->
+
+  <section>
+    <h2 class="section-title">Certifications</h2>
+    <div class="certifications-container">
+      
+      <!-- Computer Hardware Basics -->
+      <div class="certification-item">
+        <div class="badge-embed">
+          <div data-iframe-width="150" 
+               data-iframe-height="270" 
+               data-share-badge-id="4259a9fa-a1dd-4834-804f-1f47c8202d69" 
+               data-share-badge-host="https://www.credly.com"></div>
+        </div>
+        <div class="certification-title">Computer Hardware Basics</div>
       </div>
-      <!-- Name and Title -->
-      <div class="header-text">
-        <h1>Abdelhamid Soufiani</h1>
-        <p class="title">IT Operations Support | Network & System Specialist</p>
-        <p class="location">Tanger, Maroc | 23 ans</p>
+      
+      <!-- Fortinet Certified Associate Cybersecurity -->
+      <div class="certification-item">
+        <div class="badge-embed">
+          <div data-iframe-width="150" 
+               data-iframe-height="270" 
+               data-share-badge-id="e2483c5a-4a76-418c-b426-7e953a29c364" 
+               data-share-badge-host="https://www.credly.com"></div>
+        </div>
+        <div class="certification-title">Fortinet Certified Associate Cybersecurity</div>
       </div>
-    </div>
-  </header>
-
-  <!-- ===== ABOUT ME SECTION ===== -->
-  <section>
-    <h2 class="section-title">About Me</h2>
-    <p>
-      Professional IT specialist with 2 years of experience in infrastructure and networking. 
-      Skilled in system and network administration, technical support, and data management. 
-      Excels in team environments and adapts quickly to new challenges. Committed to delivering 
-      innovative projects and leveraging technology solutions.
-    </p>
-  </section>
-
-  <!-- ===== EXPERIENCE SECTION ===== -->
-  <section>
-    <h2 class="section-title">Professional Experience</h2>
-    
-    <!-- TE Connectivity Experience -->
-    <div class="experience-item">
-      <div class="experience-title">IT Operations Support Intern – TE Connectivity, Tanger</div>
-      <div class="experience-date">Sep 2024 – Present</div>
-      <ul>
-        <li>Provided technical support to over 50 users, ensuring system reliability and user satisfaction</li>
-        <li>Managed and updated network infrastructure, reducing downtime</li>
-        <li>Implemented effective data management practices, improving accessibility and security</li>
-        <li>Handled software and user account management across multiple systems</li>
-      </ul>
-    </div>
-    
-    <!-- Megadat Experience -->
-    <div class="experience-item">
-      <div class="experience-title">IT Technician – Megadat, Tanger</div>
-      <div class="experience-date">2021 – 2022 (1 year)</div>
-      <ul>
-        <li>Deployed and configured over 50 workstations and network devices to optimize performance</li>
-        <li>Installed and maintained surveillance systems, improving workplace security</li>
-        <li>Diagnosed and resolved technical issues, reducing response times</li>
-        <li>Organized network cabinets to ensure scalability and efficiency</li>
-      </ul>
-    </div>
-  </section>
-
-  <!-- ===== EDUCATION SECTION ===== -->
-  <section>
-    <h2 class="section-title">Education</h2>
-    <div class="experience-item">
-      <div class="experience-title">Diploma in Digital Infrastructure Specialist - Systems and Networks</div>
-      <div class="experience-date">2022 - 2024</div>
-      <p>ISMONTIC (Specialized Institute in Offshoring and New Information and Communication Technologies) | Tanger</p>
-    </div>
-    <div class="experience-item">
-      <div class="experience-title">Baccalaureate in Physical and Chemical Sciences</div>
-      <div class="experience-date">2020 - 2021</div>
-      <p>Lycée Ibn Al Khatib | Tanger</p>
-    </div>
-  </section>
-
-  <!-- ===== SKILLS SECTION ===== -->
-  <section>
-    <h2 class="section-title">Skills & Certifications</h2>
-    <div class="skills-list">
-      <!-- Technical Skills Column -->
-      <div class="skill-category">
-        <h3>Technical Skills</h3>
-        <ul>
-          <li><strong>Operating Systems:</strong> Windows, Linux</li>
-          <li><strong>Networking:</strong> TCP/IP, Subnetting, Routing, Switching, VLANs, VPNs</li>
-          <li><strong>Network Services:</strong> DNS, DHCP, FTP, SSH, HTTP</li>
-          <li><strong>Server Administration:</strong> Configuration, Maintenance, Troubleshooting</li>
-          <li><strong>Virtualization:</strong> VMware, Microsoft Hyper-V</li>
-          <li><strong>Security:</strong> Firewalls, Antivirus, Cybersecurity principles</li>
-        </ul>
+      
+      <!-- Fortinet FortiGate 7.4 Operator -->
+      <div class="certification-item">
+        <div class="badge-embed">
+          <div data-iframe-width="150" 
+               data-iframe-height="270" 
+               data-share-badge-id="8a81e9dd-c6e6-498a-a706-b9445921752c" 
+               data-share-badge-host="https://www.credly.com"></div>
+        </div>
+        <div class="certification-title">Fortinet FortiGate 7.4 Operator</div>
       </div>
-      <!-- Tools Column -->
-      <div class="skill-category">
-        <h3>Tools & Automation</h3>
-        <ul>
-          <li><strong>Scripting:</strong> PowerShell, Cmd, Python</li>
-          <li><strong>Automation:</strong> Batch, Task Scheduler, RoboCopy</li>
-          <li><strong>Productivity:</strong> Microsoft Office (Word, Excel, PowerPoint)</li>
-        </ul>
+      
+      <!-- Networking Basics -->
+      <div class="certification-item">
+        <div class="badge-embed">
+          <div data-iframe-width="150" 
+               data-iframe-height="270" 
+               data-share-badge-id="c6952c41-ecad-4e85-913f-ac031c1a5ec3" 
+               data-share-badge-host="https://www.credly.com"></div>
+        </div>
+        <div class="certification-title">Networking Basics</div>
       </div>
+      
+      <!-- Operating Systems Basics -->
+      <div class="certification-item">
+        <div class="badge-embed">
+          <div data-iframe-width="150" 
+               data-iframe-height="270" 
+               data-share-badge-id="bc3d825f-cf35-478d-9eb4-9b53067b30e9" 
+               data-share-badge-host="https://www.credly.com"></div>
+        </div>
+        <div class="certification-title">Operating Systems Basics</div>
+      </div>
+      
     </div>
-    
-    <!-- Certifications List -->
-    <h3>Certifications</h3>
-    <ul>
-      <li>Certified "Computer Hardware Basics" by Cisco</li>
-      <li>Certified "Networking Basics" by Cisco</li>
-      <li>Fortinet Certified Associate in Cybersecurity by Fortinet</li>
-    </ul>
   </section>
 
-  <!-- ===== PROJECTS SECTION ===== -->
-  <section>
-    <h2 class="section-title">Projects</h2>
-    <ul>
-      <li>Automated NAS backup system using RoboCopy & Task Scheduler</li>
-      <li>Designed and implemented network segmentation using VLANs to enhance security at TE Connectivity</li>
-      <li>Configured LANs and Wi-Fi printers in real-world environments (ReyTech, Megadat)</li>
-      <li>Domain and GPO management during internship at TE Connectivity</li>
-    </ul>
-  </section>
+  <!-- [Your existing footer and other sections] -->
 
-  <!-- ===== LANGUAGES & INTERESTS SECTION ===== -->
-  <section>
-    <h2 class="section-title">Languages & Interests</h2>
-    <p><strong>Languages:</strong> Arabic (Native), French (Fluent), English (Proficient)</p>
-    <p><strong>Interests:</strong> Technology & Innovation, Design, Gaming & eSports</p>
-  </section>
-
-  <!-- ===== CONTACT SECTION ===== -->
-  <section>
-    <h2 class="section-title">Contact</h2>
-    <p>Email: <a href="mailto:soufianiaodelhamide20@gmail.com">soufianiaodelhamide20@gmail.com</a></p>
-    <p>Phone: <a href="tel:+212646691509">+212 646 691509</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/abdelhamid-soufiani" target="_blank">linkedin.com/in/abdelhamid-soufiani</a></p>
-  </section>
-
-  <!-- ===== FOOTER ===== -->
-  <footer>
-    <p>&copy; 2025 Abdelhamid Soufiani</p>
-  </footer>
+  <!-- Credly Embed Script (only include once) -->
+  <script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 </body>
 </html>
