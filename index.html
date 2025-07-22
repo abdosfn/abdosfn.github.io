@@ -7,6 +7,10 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="profile.jpg" type="image/jpeg">
+  <meta name="description" content="Portfolio de Abdelhamid Soufiani, spécialiste en systèmes et réseaux. Découvrez ses compétences, expériences et certifications.">
+  <meta name="keywords" content="Abdelhamid Soufiani, systèmes, réseaux, IT, infrastructure, certifications, Tanger, Maroc">
+  <meta name="author" content="Abdelhamid Soufiani">
   <style>
     :root {
       --primary: #2563eb;
@@ -262,13 +266,31 @@
       opacity: 0.8;
     }
     
-    /* Pied de page */
-    footer {
-      background: var(--dark);
+    /* Bouton Télécharger mon CV */
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary);
       color: white;
-      text-align: center;
-      padding: 2rem;
-      margin-top: 3rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.3s, transform 0.3s;
+      margin-top: 1rem;
+    }
+    
+    .download-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    
+    /* Impression */
+    @media print {
+      body { font-size: 12pt; }
+      header { background: white !important; color: black !important; }
+      .section-title::after { background: black !important; }
     }
     
     /* Responsive */
@@ -310,12 +332,29 @@
         font-size: 1.5rem;
       }
     }
+    
+    .profile-photo-container {
+      transition: transform 0.3s ease;
+    }
+    
+    .profile-photo-container:hover {
+      transform: scale(1.05);
+    }
+    
+    .profile-photo {
+      max-width: 150px;
+      height: auto;
+      border-radius: 50%;
+    }
   </style>
 </head>
 <body>
   <header>
     <div class="container">
       <h1>Abdelhamid Soufiani</h1>
+      <div class="profile-photo-container">
+        <img src="profile.jpg" alt="Abdelhamid Soufiani" class="profile-photo">
+      </div>
       <p class="header-subtitle">Technicien spécialisé en Systèmes et Réseaux</p>
       <div class="header-contacts">
         <div class="header-contact">
@@ -463,6 +502,12 @@
         <div class="certification-card">
           <p class="certification-title">Fortinet Certified Associate in Cybersecurity</p>
         </div>
+        <div class="certification-card">
+          <div data-iframe-width="150" data-iframe-height="270" 
+               data-share-badge-id="ID-DE-VOTRE-BADGE" 
+               data-share-badge-host="https://www.credly.com"></div>
+          <p class="certification-title">Nom de la Certification</p>
+        </div>
       </div>
     </section>
 
@@ -527,6 +572,13 @@
         </div>
       </div>
     </section>
+
+    <a href="My CV.pdf" download class="download-btn">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-download" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M.5 13a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1H1a.5.5 0 0 1-.5-.5zm10-11a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V2.707L8.354 4.354a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L8 1.293 11.646.354a.5.5 0 0 1 .354-.146z"/>
+      </svg>
+      Télécharger mon CV
+    </a>
   </div>
 
   <footer>
