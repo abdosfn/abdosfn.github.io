@@ -1,140 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abdelhamid Soufiani - IT Support Portfolio</title>
+  <!-- Basic Meta Tags -->
+  <meta charset="UTF-8"> <!-- Character encoding -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsive viewport -->
+  <title>Abdelhamid Soufiani - IT Support Portfolio</title> <!-- Page title -->
+  
   <style>
+    /* ===== GLOBAL STYLES ===== */
     body { 
-        font-family: Arial, sans-serif; 
-        margin: 0; 
-        padding: 0; 
-        background: #f9f9f9; 
-        color: #333;
-        font-size: 18px;
-        line-height: 1.5; /* Tighter line spacing */
+        font-family: Arial, sans-serif; /* Clean, professional font */
+        margin: 0; /* Remove default margin */
+        padding: 0; /* Remove default padding */
+        background: #f9f9f9; /* Light gray background */
+        color: #333; /* Dark gray text for readability */
+        font-size: 18px; /* Base font size */
+        line-height: 1.5; /* Balanced line spacing */
     }
+
+    /* ===== HEADER STYLES ===== */
     header { 
-        background: #004080; 
-        color: white; 
-        padding: 1rem; 
+        background: #004080; /* Dark blue header background */
+        color: white; /* White text for contrast */
+        padding: 1rem; /* Compact padding */
         position: relative;
     }
+    
+    /* Profile container for photo and text */
     .profile-container {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 0.5rem;
-        padding: 1.5rem 0; /* Reduced padding */
-        max-width: 900px;
-        margin: 0 auto;
+        gap: 0.5rem; /* Small gap between elements */
+        padding: 1.5rem 0; /* Vertical padding only */
+        max-width: 900px; /* Max content width */
+        margin: 0 auto; /* Center aligned */
     }
+    
+    /* Photo container with portrait dimensions */
     .profile-photo-container {
-        width: 240px;
-        height: 320px;
-        margin: 0 auto 1rem; /* Reduced margin */
+        width: 240px; /* Fixed width */
+        height: 320px; /* 3:4 aspect ratio for portrait */
+        margin: 0 auto 1rem; /* Centered with bottom margin */
         position: relative;
-        overflow: hidden;
-        border-radius: 8px;
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Lighter shadow */
-        border: 5px solid white; /* Slightly thinner border */
+        overflow: hidden; /* Hide overflow for border-radius */
+        border-radius: 8px; /* Soft rounded corners */
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Subtle shadow */
+        border: 5px solid white; /* White border */
     }
+    
+    /* Profile photo styling */
     .profile-photo {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        display: block;
+        width: 100%; /* Fill container */
+        height: 100%; /* Fill container */
+        object-fit: cover; /* Crop to fill container */
+        object-position: center top; /* Focus on face */
+        display: block; /* Remove inline spacing */
     }
+    
+    /* Header text alignment */
     .header-text {
         text-align: center;
     }
+    
+    /* Job title styling */
     .title {
-        font-size: 1.3rem;
-        margin: 0.3rem 0; /* Reduced margin */
+        font-size: 1.3rem; /* Slightly larger than body */
+        margin: 0.3rem 0; /* Tight vertical margin */
     }
+    
+    /* Location text styling */
     .location {
-        font-size: 1.1rem;
-        margin: 0;
+        font-size: 1.1rem; /* Slightly larger than body */
+        margin: 0; /* No margin */
     }
+
+    /* ===== CONTENT SECTION STYLES ===== */
     section { 
-        padding: 1.5rem 1rem; /* Reduced padding */
-        max-width: 900px; 
-        margin: auto; 
+        padding: 1.5rem 1rem; /* Compact padding */
+        max-width: 900px; /* Max content width */
+        margin: auto; /* Center aligned */
     }
+    
+    /* Heading hierarchy */
     h1 { 
-        font-size: 2.2rem; /* Slightly smaller */
-        margin-bottom: 0.3rem; /* Reduced margin */
+        font-size: 2.2rem; /* Largest heading */
+        margin-bottom: 0.3rem; /* Tight spacing */
     }
     h2 { 
-        font-size: 1.8rem; /* Slightly smaller */
-        margin-bottom: 0.3rem; /* Reduced margin */ 
+        font-size: 1.8rem; /* Section headings */
+        margin-bottom: 0.3rem; /* Tight spacing */
     }
     h3 {
-        font-size: 1.3rem; /* Slightly smaller */
-        margin-bottom: 0.3rem; /* Reduced margin */
+        font-size: 1.3rem; /* Sub-section headings */
+        margin-bottom: 0.3rem; /* Tight spacing */
     }
+    
+    /* Section title with underline */
     .section-title { 
-        color: #004080; 
-        border-bottom: 2px solid #004080; 
-        padding-bottom: 3px; /* Reduced padding */
-        margin-bottom: 0.8rem; /* Reduced margin */
-        font-size: 1.6rem; /* Slightly smaller */
+        color: #004080; /* Blue to match header */
+        border-bottom: 2px solid #004080; /* Underline effect */
+        padding-bottom: 3px; /* Space between text and line */
+        margin-bottom: 0.8rem; /* Space after title */
+        font-size: 1.6rem; /* Slightly smaller than h2 */
     }
+    
+    /* List styling */
     ul { 
-        padding-left: 1.2rem; /* Reduced padding */
-        font-size: 1.1rem;
-        margin-top: 0.5rem; /* Reduced margin */
+        padding-left: 1.2rem; /* Indent bullets */
+        font-size: 1.1rem; /* Slightly larger than body */
+        margin-top: 0.5rem; /* Space above list */
     }
     li {
-        margin-bottom: 0.3rem; /* Reduced margin */
+        margin-bottom: 0.3rem; /* Space between items */
     }
-    footer { 
-        text-align: center; 
-        padding: 1rem; /* Reduced padding */
-        background: #eee; 
-        font-size: 1rem; /* Slightly smaller */
-    }
-    a { 
-        color: #004080; 
-        text-decoration: none; 
-    }
-    a:hover { 
-        text-decoration: underline; 
-    }
+
+    /* ===== EXPERIENCE SECTION STYLES ===== */
     .experience-item { 
-        margin-bottom: 1.2rem; /* Reduced margin */ 
+        margin-bottom: 1.2rem; /* Space between jobs */
     }
     .experience-title { 
-        font-weight: bold; 
-        margin-bottom: 0.3rem; /* Reduced margin */
-        font-size: 1.2rem; /* Slightly smaller */
+        font-weight: bold; /* Bold job titles */
+        margin-bottom: 0.3rem; /* Tight spacing */
+        font-size: 1.2rem; /* Slightly larger */
     }
     .experience-date { 
-        color: #666; 
-        font-style: italic; 
-        margin-bottom: 0.3rem; /* Reduced margin */
-        font-size: 1rem; /* Slightly smaller */
+        color: #666; /* Gray for dates */
+        font-style: italic; /* Italic dates */
+        margin-bottom: 0.3rem; /* Tight spacing */
+        font-size: 1rem; /* Normal size */
     }
+
+    /* ===== SKILLS SECTION STYLES ===== */
     .skills-list { 
-        display: flex; 
-        flex-wrap: wrap; 
-        gap: 1rem; /* Reduced gap */
+        display: flex; /* Side-by-side columns */
+        flex-wrap: wrap; /* Wrap on small screens */
+        gap: 1rem; /* Space between columns */
     }
     .skill-category { 
-        flex: 1; 
-        min-width: 250px; 
+        flex: 1; /* Equal width columns */
+        min-width: 250px; /* Minimum column width */
     }
+
+    /* ===== FOOTER STYLES ===== */
+    footer { 
+        text-align: center; /* Centered text */
+        padding: 1rem; /* Compact padding */
+        background: #eee; /* Light gray background */
+        font-size: 1rem; /* Normal size */
+    }
+
+    /* ===== LINK STYLES ===== */
+    a { 
+        color: #004080; /* Blue to match theme */
+        text-decoration: none; /* No underline */
+    }
+    a:hover { 
+        text-decoration: underline; /* Underline on hover */
+    }
+
+    /* ===== PARAGRAPH STYLES ===== */
     p {
-        font-size: 1.1rem;
-        line-height: 1.4; /* Tighter line spacing */
-        margin: 0.5rem 0; /* Reduced margin */
+        font-size: 1.1rem; /* Slightly larger than body */
+        line-height: 1.4; /* Tight line spacing */
+        margin: 0.5rem 0; /* Vertical spacing */
     }
+
+    /* ===== MOBILE RESPONSIVE STYLES ===== */
     @media (max-width: 600px) {
+        /* Smaller photo on mobile */
         .profile-photo-container {
             width: 180px;
             height: 240px;
         }
+        /* Smaller headings on mobile */
         h1 {
             font-size: 1.8rem;
         }
@@ -145,12 +184,14 @@
   </style>
 </head>
 <body>
-  <!-- Rest of your HTML content remains exactly the same -->
+  <!-- ===== HEADER WITH PROFILE ===== -->
   <header>
     <div class="profile-container">
+      <!-- Profile Photo Container -->
       <div class="profile-photo-container">
         <img src="profile.jpg" alt="Abdelhamid Soufiani" class="profile-photo">
       </div>
+      <!-- Name and Title -->
       <div class="header-text">
         <h1>Abdelhamid Soufiani</h1>
         <p class="title">IT Operations Support | Network & System Specialist</p>
@@ -159,6 +200,7 @@
     </div>
   </header>
 
+  <!-- ===== ABOUT ME SECTION ===== -->
   <section>
     <h2 class="section-title">About Me</h2>
     <p>
@@ -169,9 +211,11 @@
     </p>
   </section>
 
+  <!-- ===== EXPERIENCE SECTION ===== -->
   <section>
     <h2 class="section-title">Professional Experience</h2>
     
+    <!-- TE Connectivity Experience -->
     <div class="experience-item">
       <div class="experience-title">IT Operations Support Intern – TE Connectivity, Tanger</div>
       <div class="experience-date">Sep 2024 – Present</div>
@@ -183,6 +227,7 @@
       </ul>
     </div>
     
+    <!-- Megadat Experience -->
     <div class="experience-item">
       <div class="experience-title">IT Technician – Megadat, Tanger</div>
       <div class="experience-date">2021 – 2022 (1 year)</div>
@@ -195,6 +240,7 @@
     </div>
   </section>
 
+  <!-- ===== EDUCATION SECTION ===== -->
   <section>
     <h2 class="section-title">Education</h2>
     <div class="experience-item">
@@ -209,9 +255,11 @@
     </div>
   </section>
 
+  <!-- ===== SKILLS SECTION ===== -->
   <section>
     <h2 class="section-title">Skills & Certifications</h2>
     <div class="skills-list">
+      <!-- Technical Skills Column -->
       <div class="skill-category">
         <h3>Technical Skills</h3>
         <ul>
@@ -223,6 +271,7 @@
           <li><strong>Security:</strong> Firewalls, Antivirus, Cybersecurity principles</li>
         </ul>
       </div>
+      <!-- Tools Column -->
       <div class="skill-category">
         <h3>Tools & Automation</h3>
         <ul>
@@ -233,6 +282,7 @@
       </div>
     </div>
     
+    <!-- Certifications List -->
     <h3>Certifications</h3>
     <ul>
       <li>Certified "Computer Hardware Basics" by Cisco</li>
@@ -241,6 +291,7 @@
     </ul>
   </section>
 
+  <!-- ===== PROJECTS SECTION ===== -->
   <section>
     <h2 class="section-title">Projects</h2>
     <ul>
@@ -251,12 +302,14 @@
     </ul>
   </section>
 
+  <!-- ===== LANGUAGES & INTERESTS SECTION ===== -->
   <section>
     <h2 class="section-title">Languages & Interests</h2>
     <p><strong>Languages:</strong> Arabic (Native), French (Fluent), English (Proficient)</p>
     <p><strong>Interests:</strong> Technology & Innovation, Design, Gaming & eSports</p>
   </section>
 
+  <!-- ===== CONTACT SECTION ===== -->
   <section>
     <h2 class="section-title">Contact</h2>
     <p>Email: <a href="mailto:soufianiaodelhamide20@gmail.com">soufianiaodelhamide20@gmail.com</a></p>
@@ -264,6 +317,7 @@
     <p>LinkedIn: <a href="https://www.linkedin.com/in/abdelhamid-soufiani" target="_blank">linkedin.com/in/abdelhamid-soufiani</a></p>
   </section>
 
+  <!-- ===== FOOTER ===== -->
   <footer>
     <p>&copy; 2025 Abdelhamid Soufiani</p>
   </footer>
