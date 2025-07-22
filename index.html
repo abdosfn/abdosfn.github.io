@@ -12,7 +12,7 @@
         background: #f9f9f9; 
         color: #333;
         font-size: 18px;
-        line-height: 1.6;
+        line-height: 1.5; /* Tighter line spacing */
     }
     header { 
         background: #004080; 
@@ -25,19 +25,19 @@
         flex-direction: column;
         align-items: center;
         gap: 0.5rem;
-        padding: 2rem 0;
+        padding: 1.5rem 0; /* Reduced padding */
         max-width: 900px;
         margin: 0 auto;
     }
     .profile-photo-container {
         width: 240px;
-        height: 320px; /* 3:4 aspect ratio matching your photo */
-        margin: 0 auto 1.5rem;
+        height: 320px;
+        margin: 0 auto 1rem; /* Reduced margin */
         position: relative;
         overflow: hidden;
-        border-radius: 8px; /* Soft rounded corners */
-        box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-        border: 6px solid white;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Lighter shadow */
+        border: 5px solid white; /* Slightly thinner border */
     }
     .profile-photo {
         width: 100%;
@@ -51,47 +51,49 @@
     }
     .title {
         font-size: 1.3rem;
-        margin: 0.5rem 0;
+        margin: 0.3rem 0; /* Reduced margin */
     }
     .location {
         font-size: 1.1rem;
         margin: 0;
     }
     section { 
-        padding: 2rem 1rem; 
+        padding: 1.5rem 1rem; /* Reduced padding */
         max-width: 900px; 
         margin: auto; 
     }
     h1 { 
-        font-size: 2.5rem; 
-        margin-bottom: 0.5rem; 
+        font-size: 2.2rem; /* Slightly smaller */
+        margin-bottom: 0.3rem; /* Reduced margin */
     }
     h2 { 
-        font-size: 2rem;
-        margin-bottom: 0.5rem; 
+        font-size: 1.8rem; /* Slightly smaller */
+        margin-bottom: 0.3rem; /* Reduced margin */ 
     }
     h3 {
-        font-size: 1.5rem;
+        font-size: 1.3rem; /* Slightly smaller */
+        margin-bottom: 0.3rem; /* Reduced margin */
     }
     .section-title { 
         color: #004080; 
         border-bottom: 2px solid #004080; 
-        padding-bottom: 5px; 
-        margin-bottom: 1.5rem; 
-        font-size: 1.8rem;
+        padding-bottom: 3px; /* Reduced padding */
+        margin-bottom: 0.8rem; /* Reduced margin */
+        font-size: 1.6rem; /* Slightly smaller */
     }
     ul { 
-        padding-left: 1.5rem; 
+        padding-left: 1.2rem; /* Reduced padding */
         font-size: 1.1rem;
+        margin-top: 0.5rem; /* Reduced margin */
     }
     li {
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3rem; /* Reduced margin */
     }
     footer { 
         text-align: center; 
-        padding: 1.5rem; 
+        padding: 1rem; /* Reduced padding */
         background: #eee; 
-        font-size: 1.1rem;
+        font-size: 1rem; /* Slightly smaller */
     }
     a { 
         color: #004080; 
@@ -101,23 +103,23 @@
         text-decoration: underline; 
     }
     .experience-item { 
-        margin-bottom: 2rem; 
+        margin-bottom: 1.2rem; /* Reduced margin */ 
     }
     .experience-title { 
         font-weight: bold; 
-        margin-bottom: 0.5rem; 
-        font-size: 1.3rem;
+        margin-bottom: 0.3rem; /* Reduced margin */
+        font-size: 1.2rem; /* Slightly smaller */
     }
     .experience-date { 
         color: #666; 
         font-style: italic; 
-        margin-bottom: 0.5rem;
-        font-size: 1.1rem;
+        margin-bottom: 0.3rem; /* Reduced margin */
+        font-size: 1rem; /* Slightly smaller */
     }
     .skills-list { 
         display: flex; 
         flex-wrap: wrap; 
-        gap: 1.5rem; 
+        gap: 1rem; /* Reduced gap */
     }
     .skill-category { 
         flex: 1; 
@@ -125,7 +127,8 @@
     }
     p {
         font-size: 1.1rem;
-        line-height: 1.6;
+        line-height: 1.4; /* Tighter line spacing */
+        margin: 0.5rem 0; /* Reduced margin */
     }
     @media (max-width: 600px) {
         .profile-photo-container {
@@ -133,12 +136,16 @@
             height: 240px;
         }
         h1 {
-            font-size: 2rem;
+            font-size: 1.8rem;
+        }
+        .section-title {
+            font-size: 1.4rem;
         }
     }
   </style>
 </head>
 <body>
+  <!-- Rest of your HTML content remains exactly the same -->
   <header>
     <div class="profile-container">
       <div class="profile-photo-container">
