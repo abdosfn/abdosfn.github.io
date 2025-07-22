@@ -14,32 +14,99 @@
     footer { text-align: center; padding: 1rem; background: #eee; }
     a { color: #004080; text-decoration: none; }
     a:hover { text-decoration: underline; }
-    img.profile { width: 150px; border-radius: 50%; margin-top: 10px; }
+    .experience-item { margin-bottom: 1.5rem; }
+    .experience-title { font-weight: bold; margin-bottom: 0.3rem; }
+    .experience-date { color: #666; font-style: italic; }
+    .skills-list { display: flex; flex-wrap: wrap; gap: 1rem; }
+    .skill-category { flex: 1; min-width: 250px; }
   </style>
 </head>
 <body>
   <header>
     <h1>Abdelhamid Soufiani</h1>
-    <img src="profile.jpg" alt="Abdelhamid Soufiani" class="profile">
     <p>IT Operations Support | Network & System Specialist</p>
+    <p>Tanger, Maroc | 23 ans</p>
   </header>
 
   <section>
     <h2 class="section-title">About Me</h2>
     <p>
-      I'm a dedicated IT support professional with hands-on experience in technical assistance, network infrastructure,
-      and automation. I enjoy solving problems, supporting users, and continuously learning new tools and technologies.
+      Professional IT specialist with 2 years of experience in infrastructure and networking. 
+      Skilled in system and network administration, technical support, and data management. 
+      Excels in team environments and adapts quickly to new challenges. Committed to delivering 
+      innovative projects and leveraging technology solutions.
     </p>
   </section>
 
   <section>
+    <h2 class="section-title">Professional Experience</h2>
+    
+    <div class="experience-item">
+      <div class="experience-title">IT Operations Support Intern – TE Connectivity, Tanger</div>
+      <div class="experience-date">Sep 2024 – Present</div>
+      <ul>
+        <li>Provided technical support to over 50 users, ensuring system reliability and user satisfaction</li>
+        <li>Managed and updated network infrastructure, reducing downtime</li>
+        <li>Implemented effective data management practices, improving accessibility and security</li>
+        <li>Handled software and user account management across multiple systems</li>
+      </ul>
+    </div>
+    
+    <div class="experience-item">
+      <div class="experience-title">IT Technician – Megadat, Tanger</div>
+      <div class="experience-date">2021 – 2022 (1 year)</div>
+      <ul>
+        <li>Deployed and configured over 50 workstations and network devices to optimize performance</li>
+        <li>Installed and maintained surveillance systems, improving workplace security</li>
+        <li>Diagnosed and resolved technical issues, reducing response times</li>
+        <li>Organized network cabinets to ensure scalability and efficiency</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Education</h2>
+    <div class="experience-item">
+      <div class="experience-title">Diploma in Digital Infrastructure Specialist - Systems and Networks</div>
+      <div class="experience-date">2022 - 2024</div>
+      <p>ISMONTIC (Specialized Institute in Offshoring and New Information and Communication Technologies) | Tanger</p>
+    </div>
+    <div class="experience-item">
+      <div class="experience-title">Baccalaureate in Physical and Chemical Sciences</div>
+      <div class="experience-date">2020 - 2021</div>
+      <p>Lycée Ibn Al Khatib | Tanger</p>
+    </div>
+  </section>
+
+  <section>
     <h2 class="section-title">Skills & Certifications</h2>
+    <div class="skills-list">
+      <div class="skill-category">
+        <h3>Technical Skills</h3>
+        <ul>
+          <li><strong>Operating Systems:</strong> Windows, Linux</li>
+          <li><strong>Networking:</strong> TCP/IP, Subnetting, Routing, Switching, VLANs, VPNs</li>
+          <li><strong>Network Services:</strong> DNS, DHCP, FTP, SSH, HTTP</li>
+          <li><strong>Server Administration:</strong> Configuration, Maintenance, Troubleshooting</li>
+          <li><strong>Virtualization:</strong> VMware, Microsoft Hyper-V</li>
+          <li><strong>Security:</strong> Firewalls, Antivirus, Cybersecurity principles</li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <h3>Tools & Automation</h3>
+        <ul>
+          <li><strong>Scripting:</strong> PowerShell, Cmd, Python</li>
+          <li><strong>Automation:</strong> Batch, Task Scheduler, RoboCopy</li>
+          <li><strong>Productivity:</strong> Microsoft Office (Word, Excel, PowerPoint)</li>
+        </ul>
+      </div>
+    </div>
+    
+    <h3>Certifications</h3>
     <ul>
-      <li><strong>Operating Systems:</strong> Windows, Linux Mint, Window Managers</li>
-      <li><strong>Networking:</strong> Cisco (CCNA), Fortinet</li>
-      <li><strong>Scripting & Automation:</strong> Batch, PowerShell, Task Scheduler, RoboCopy</li>
-      <li><strong>Tools:</strong> VMware, GPO, Active Directory</li>
-      <li><strong>Soft Skills:</strong> Teamwork, User support, Troubleshooting</li>
+      <li>Certified "Computer Hardware Basics" by Cisco</li>
+      <li>Certified "Networking Basics" by Cisco</li>
+      <li>Fortinet Certified Associate in Cybersecurity by Fortinet</li>
     </ul>
   </section>
 
@@ -47,20 +114,23 @@
     <h2 class="section-title">Projects</h2>
     <ul>
       <li>Automated NAS backup system using RoboCopy & Task Scheduler</li>
+      <li>Built a Minecraft modpack with RPG + Tech theme, featuring custom skill trees and quests</li>
       <li>Configured LANs and Wi-Fi printers in real-world environments (ReyTech, Megadat)</li>
-      <li>Provided remote support and device troubleshooting during internship at TE Connectivity</li>
+      <li>Domain and GPO management during internship at TE Connectivity</li>
     </ul>
   </section>
 
   <section>
-    <h2 class="section-title">Resume</h2>
-    <p><a href="#">Download my CV (PDF)</a> <!-- Replace # with your actual CV link when ready --></p>
+    <h2 class="section-title">Languages & Interests</h2>
+    <p><strong>Languages:</strong> Arabic (Native), French (Fluent), English (Proficient)</p>
+    <p><strong>Interests:</strong> Technology & Innovation, Design, Gaming & eSports</p>
   </section>
 
   <section>
     <h2 class="section-title">Contact</h2>
-    <p>Email: <a href="mailto:your.email@example.com">soufianiabdelhamide20@gmail.com</a></p>
-    <p>LinkedIn: <a href="www.linkedin.com/in/abdelhamid-soufiani">linkedin.com/in/yourprofile</a></p>
+    <p>Email: <a href="mailto:soufianiaodelhamide20@gmail.com">soufianiaodelhamide20@gmail.com</a></p>
+    <p>Phone: <a href="tel:+212646691509">+212 646 691509</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
   </section>
 
   <footer>
